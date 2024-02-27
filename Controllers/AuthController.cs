@@ -88,6 +88,8 @@ namespace Filmzie.Controllers
         /// <response code="200">User has been logged in</response> 
         /// <response code="401">Login failed (unauthorized)</response>
         /// <response code="500">User does not exist (unauthorized)</response>
+        
+
         [HttpPost("signin")]
         [ResponseCache(CacheProfileName = "NoCache")]
         public async Task<IActionResult> Login(LoginRequestDTO loginRequest)
