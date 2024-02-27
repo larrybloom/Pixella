@@ -62,7 +62,6 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(System.IO.Path.Combine(
         AppContext.BaseDirectory, xmlFilename));
 
-    c.EnableAnnotations();
 
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Filmzie.Api", Version = "v1.0.0" });
 
