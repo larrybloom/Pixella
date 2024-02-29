@@ -23,7 +23,7 @@ namespace Filmzie.Controllers
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
 
-        public AuthController(UserManager<User> userManager, IConfiguration configuration, 
+        public AuthController(UserManager<User> userManager, IConfiguration configuration,
             SignInManager<User> signInManager, AppDbContext context, IMapper mapper)
         {
             _userManager = userManager;
@@ -88,7 +88,7 @@ namespace Filmzie.Controllers
         /// <response code="200">User has been logged in</response> 
         /// <response code="401">Login failed (unauthorized)</response>
         /// <response code="500">User does not exist (unauthorized)</response>
-        
+
 
         [HttpPost("signin")]
         [ResponseCache(CacheProfileName = "NoCache")]
@@ -125,12 +125,12 @@ namespace Filmzie.Controllers
         }
 
 
-         /// <summary>
-         /// Generate JWT Token
-         /// </summary>
-         /// <param name="userId"></param>
-         /// <param name="authClaims"></param>
-         /// <returns>JWT TOKEN</returns>
+        /// <summary>
+        /// Generate JWT Token
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="authClaims"></param>
+        /// <returns>JWT TOKEN</returns>
         private JwtSecurityToken GetToken(string userId, List<Claim> authClaims)
         {
             var authSignInKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
