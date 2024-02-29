@@ -1,5 +1,4 @@
-﻿using Filmzie.ApiService;
-using Filmzie.ApiService.Interface;
+﻿using Filmzie.ApiService.Interface;
 using Filmzie.Context;
 using Filmzie.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -49,12 +48,6 @@ namespace Filmzie.Controllers
             }
         }
 
-        /// <summary>
-        /// Search media by title and optional year.
-        /// </summary>
-        /// <param name="Title">The title of the media.</param>
-        /// <param name="year">Optional parameter for the release year.</param>
-        /// <returns>Returns search results for the specified title and year.</returns>
         [HttpGet("Title/{Title}")]
         public async Task<IActionResult> SearchMediaByYear(string Title, string? year)
         {
